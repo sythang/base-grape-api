@@ -6,9 +6,16 @@
 
     <%= stylesheet_link_tag    'admin', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" rel="stylesheet">
   </head>
 
   <body class="sidebar-fixed header-fixed">
-    <%= yield %>
+    <div class="page-wrapper">
+      <%= render "admin/shared/header" %>
+      <div class="main-container">
+        <%= render "admin/shared/left_sidebar" %>
+        <%= yield %>
+      </div>
+    </div>
   </body>
 </html>
