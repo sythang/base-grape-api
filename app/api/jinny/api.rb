@@ -5,5 +5,6 @@ module Jinny
 
     mount Jinny::ApiV1
     add_swagger_documentation
+    
   end
 end

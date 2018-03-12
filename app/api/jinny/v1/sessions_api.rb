@@ -1,9 +1,7 @@
 module Jinny::V1
   class SessionsAPI < Grape::API
     resource :sessions do
-      desc 'Sign in' do
-        failure [[200, 'Unauthorized']]
-      end
+      desc 'Sign in'
       params do
         requires :email, type: String
         requires :password, type: String
@@ -24,5 +22,6 @@ module Jinny::V1
         present :status, :OK
       end
     end
+    
   end
 end
