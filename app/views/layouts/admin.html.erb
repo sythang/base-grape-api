@@ -9,13 +9,19 @@
     <link href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" rel="stylesheet">
   </head>
 
-  <body class="sidebar-fixed header-fixed">
-    <div class="page-wrapper">
-      <%= render "admin/shared/header" %>
-      <div class="main-container">
-        <%= render "admin/shared/left_sidebar" %>
-        <%= yield %>
+  <% if administrator_signed_in? %>
+    <body class="sidebar-fixed header-fixed">
+      <div class="page-wrapper">
+        <%= render "admin/shared/header" %>
+        <div class="main-container">
+          <%= render "admin/shared/left_sidebar" %>
+            <div class="content">
+              <%= yield %>
+            </div>
+        </div>
       </div>
-    </div>
-  </body>
+    </body>
+  <% else %>
+    <%= yield %>
+  <% end %>
 </html>

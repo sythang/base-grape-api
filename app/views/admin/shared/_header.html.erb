@@ -4,9 +4,9 @@
       <i class="fa fa-bars"></i>
     </a>
 
-    <a class="navbar-brand" href="#">
-      <!-- <img src="./imgs/logo.png" alt="logo"> -->
-      <%= image_tag "logo.png" %>
+    <a class="navbar-brand d-flex align-items-center" href="#">
+      <i class="fas fa-tachometer-alt"></i>&nbsp;
+      <strong>Jinny</strong>
     </a>
 
     <a href="#" class="btn btn-link sidebar-toggle d-md-down-none">
@@ -31,7 +31,7 @@
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <%= image_tag "avatar-1.png", class: "avatar avatar-sm" %>
-            <span class="small ml-1 d-md-down-none">John Smith</span>
+            <span class="small ml-1 d-md-down-none"><%= current_administrator.email %></span>
         </a>
 
         <div class="dropdown-menu dropdown-menu-right">
@@ -39,10 +39,6 @@
 
           <a href="#" class="dropdown-item">
             <i class="fa fa-user"></i> Profile
-          </a>
-
-          <a href="#" class="dropdown-item">
-            <i class="fa fa-envelope"></i> Messages
           </a>
 
           <div class="dropdown-header">Settings</div>
