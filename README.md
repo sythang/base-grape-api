@@ -5,9 +5,9 @@ application up and running.
 
 Things you may want to cover:
 
-* Ruby version
+* Ruby version : 2.4.2
 
-* System dependencies
+* System dependencies : Macox, Ubuntu
 
 * Configuration
 
@@ -20,5 +20,11 @@ Things you may want to cover:
 * Services (job queues, cache servers, search engines, etc.)
 
 * Deployment instructions
+ - This project using capistrano to deploy
 
-* ...
+
+
+* Error Code:
+
+ - INVALID_REQUEST : 
+ - REQUEST_DENIED : 

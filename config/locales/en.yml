@@ -31,3 +31,4 @@
 
 en:
   hello: "Hello world"
+  resource_not_found: "The resource you are looking for doesn't exist"

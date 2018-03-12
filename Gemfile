@@ -35,9 +35,15 @@ gem 'jbuilder', '~> 2.5'
 gem 'bootstrap', '~> 4.0'
 gem 'jquery-rails'
 
-gem 'grape'
+#api extension
+gem 'grape', '1.0.2'
+gem 'grape-swagger', '0.28.0'
+gem 'grape-swagger-rails', '0.3.0'
+gem 'grape-swagger-entity', '0.2.3'
+gem 'grape-entity', '0.7.1'
+gem 'grape-swagger-representable', '0.1.5'
+
 gem 'devise', '~> 4.4', '>= 4.4.1'
-gem 'simple_token_authentication', '~> 1.15', '>= 1.15.1'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
@@ -53,6 +59,11 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  gem "capistrano",                                "~> 3.10"
+  gem 'capistrano-rvm'
+  gem 'capistrano-bundler',                        '~> 1.3'
+  gem 'capistrano-rails',                           '~> 1.1'
+  gem 'capistrano-passenger'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

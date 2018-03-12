@@ -10,15 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180307105337) do
+ActiveRecord::Schema.define(version: 20180310085700) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
   enable_extension "pgcrypto"
 
+  create_table "api_tokens", force: :cascade do |t|
+    t.string "token"
+    t.date "expired_at"
+    t.uuid "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_api_tokens_on_user_id"
+  end
+
   create_table "users", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.date "dob"
-    t.integer "gener"
+    t.integer "gender"
     t.string "username"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -32,8 +41,11 @@ ActiveRecord::Schema.define(version: 20180307105337) do
     t.datetime "last_sign_in_at"
     t.inet "current_sign_in_ip"
     t.inet "last_sign_in_ip"
-    t.string "authentication_token", limit: 30
-    t.index ["authentication_token"], name: "index_users_on_authentication_token", unique: true
+    t.string "confirmation_token"
+    t.datetime "confirmed_at"
+    t.datetime "confirmation_sent_at"
+    t.string "full_name"
+    t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
