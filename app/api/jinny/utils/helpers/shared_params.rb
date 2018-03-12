@@ -1,4 +1,4 @@
-module Jinny::Untils::Helpers
+module Jinny::Utils::Helpers
 	module SharedParams
 	  extend Grape::API::Helpers
 
