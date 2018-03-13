@@ -1,8 +1,6 @@
 module Jinny::Utils::Helpers
   module AuthenticatorHelper
     def current_user
-      p "===="
-      p headers
       raise Jinny::Utils::Errors::AuthenticationErrors::AccessTokenMissing.new unless headers['Jinny-Http-Token'] 
       api_token = ApiToken.find_by(token: headers['Jinny-Http-Token'])
 
@@ -21,7 +19,6 @@ module Jinny::Utils::Helpers
 
     def sign_in(email, password)
       user = User.find_by(email: email)
-      p user
       raise Jinny::Utils::Errors::AuthenticationErrors::EmailNotFound.new unless user
       raise Jinny::Utils::Errors::AuthenticationErrors::WrongPassword.new unless user.valid_password?(password)
       api_token = user.generate_access_token
