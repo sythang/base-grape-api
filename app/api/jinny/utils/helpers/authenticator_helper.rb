@@ -1,5 +1,5 @@
 module Jinny::Utils::Helpers
-  module Authenticator
+  module AuthenticatorHelper
     def current_user
       p "===="
       p headers

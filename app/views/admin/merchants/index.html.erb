@@ -1,0 +1,50 @@
+<%= render "admin/shared/flash_message" %>
+<div class="card">  
+  <div class="card-header bg-light">
+    <div class="row">
+      <div class="col-sm-6">
+        <h4>Users Listing</h4>
+      </div>
+      <div class="col-sm-6">
+        <%= link_to new_admin_merchant_path, class: "float-right btn btn-primary" do %>
+          <i class="fas fa-plus"></i> &nbsp;New Merchant
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <div class="card-body">
+    <div class="table-responsive">
+      <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th>ID</th>
+            <th>Logo</th>
+            <th>Name</th>
+            <th colspan="3"></th>            
+          </tr>
+        </thead>
+        <tbody>
+          <% @merchants.each do |merchant| %>
+            <tr>
+              <td><%= merchant.id %></td>
+              <td><%= image_tag merchant.logo.url(:thumb) %></td>
+              <td><%= merchant.name %></td>
+              <td>
+                <%= link_to 'Show', admin_merchant_path(merchant) %>
+              </td>
+              <td>
+                <%= link_to 'Edit', edit_admin_merchant_path(merchant) %>
+              </td>
+              <td>
+                <%= link_to 'Destroy', admin_merchant_path(merchant), method: :delete, data: { confirm: 'Are you sure?' } %>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+      <div class="float-right">
+        <%= paginate @merchants %>
+      </div>
+    </div>
+  </div>
+</div>

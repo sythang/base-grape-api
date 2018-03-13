@@ -1,0 +1,13 @@
+<%= simple_form_for([:admin,@merchant]) do |f| %>
+  <%= f.error_notification %>
+
+  <%= f.input :name %>
+  <%= f.input :description %>
+  <%= f.input :logo, as: :file %>
+  <% if f.object.logo.present? %>
+    <%= image_tag  f.object.logo.url, width: 200 %>
+  <% end %>
+  <div class="form-actions">
+    <%= f.button :submit, class: "btn btn-primary" %>
+  </div>
+<% end %>

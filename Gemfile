@@ -43,8 +43,11 @@ gem 'grape-swagger-entity', '0.2.3'
 gem 'grape-entity', '0.7.1'
 gem 'grape-swagger-representable', '0.1.5'
 
+
 gem 'devise', '~> 4.4', '>= 4.4.1'
 gem 'kaminari', '1.1.1'
+gem 'simple_form', '3.5.1'
+gem "paperclip", "~> 5.2.1"
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -66,6 +69,7 @@ group :development do
   gem 'capistrano-bundler',                        '~> 1.3'
   gem 'capistrano-rails',                           '~> 1.1'
   gem 'capistrano-passenger'
+  gem "letter_opener"
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

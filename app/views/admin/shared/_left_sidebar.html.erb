@@ -4,9 +4,13 @@
       <li class="nav-title">Navigation</li>
 
       <li class="nav-item">
-        <!-- <a href="index.html" class="nav-link"> -->
         <%= link_to admin_users_path, class: "nav-link" do %>
           <i class="fas fa-tachometer-alt"></i>Users
+        <% end %>
+      </li>
+      <li class="nav-item">
+        <%= link_to admin_merchants_path, class: "nav-link" do %>
+          <i class="far fa-building"></i>Merchants
         <% end %>
       </li>
 
