@@ -1,5 +1,6 @@
 module Jinny::Utils::Errors
   module AuthenticationErrors
+
     class AccessTokenMissing < BaseError
       code "ACCESS_TOKEN_MISSING"
       message "Access token not provided"
